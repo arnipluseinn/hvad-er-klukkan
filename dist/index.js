@@ -1841,7 +1841,7 @@ var PS = {};
           return new Data_Tuple.Tuple(v, v2);
       };
   };
-  var advancePeriodInMilliseconds = 5000;
+  var advancePeriodInMilliseconds = 8000;
   var startAdvancingClock = function (startTime) {
       return Data_Functor["void"](Control_Monad_Eff.functorEff)(function __do() {
           var v = Control_Monad_Eff_Ref.newRef(startTime)();

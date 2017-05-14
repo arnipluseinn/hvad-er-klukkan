@@ -36,7 +36,7 @@ animateClock canvasId from to =
     pure unit
 
 advancePeriodInMilliseconds :: Int
-advancePeriodInMilliseconds = 5000
+advancePeriodInMilliseconds = 8000
   
 startAdvancingClock :: forall eff. Time -> Eff (canvas :: CANVAS, dom :: DOM, ref :: REF, timer :: TIMER | eff) Unit
 startAdvancingClock startTime = void $ do
