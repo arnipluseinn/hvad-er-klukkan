@@ -1,0 +1,23 @@
+{
+  "name": "clock",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-canvas": "^3.0.0",
+    "purescript-math": "^2.0.0",
+    "purescript-arrays": "^4.0.1",
+    "purescript-integers": "^3.0.0",
+    "purescript-jquery": "^4.0.0",
+    "purescript-js-timers": "^3.0.0",
+    "purescript-tuples": "^4.0.0",
+    "purescript-refs": "^3.0.0",
+    "purescript-random": "^3.0.0",
+    "purescript-foreign": "^4.0.0"
+  },
+  "devDependencies": {}
+}

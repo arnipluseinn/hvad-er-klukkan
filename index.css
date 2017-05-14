@@ -1,0 +1,15 @@
+
+table {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: cursive;
+  font-size: x-large;
+  color: #373;
+  line-height: 2em;
+}
+
+.time-text-cell {
+  min-width: 10em;
+  padding-left: 1em;
+}

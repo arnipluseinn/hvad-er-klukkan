@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td style="width: 400px;">
+          <canvas id="advancing-clock" width="400" height="400"></canvas>
+        </td>
+        <td class="time-text-cell">
+          <span id="time-digits"></span>
+          <br />
+          <span id="time-text"></span>
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <table>
+      <tr>
+        <td style="width: 300px;">
+          <canvas id="quiz-clock" width="300" height="300"></canvas>
+        </td>
+        <td class="time-text-cell">
+          ?
+          <br />
+          <input id="time-guess" type="text" placeholder="pl: 8:15" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
