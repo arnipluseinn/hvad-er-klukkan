@@ -10,6 +10,15 @@ table {
 }
 
 .time-text-cell {
+  position: relative;
   min-width: 10em;
   padding-left: 1em;
+}
+
+.correct-image {
+  position: absolute;
+  top: 0%;
+  width: 300px;
+  height: 212px;
+  display: none;
 }

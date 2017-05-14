@@ -3,10 +3,10 @@ module Main where
 import Prelude
 
 import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.JQuery (JQuery, JQueryEvent, getValue, on, ready, select, setText, setValue)
+import Control.Monad.Eff.JQuery (JQuery, JQueryEvent, display, getValue, hide, on, ready, select, setText, setValue)
 import Control.Monad.Eff.Random (RANDOM, randomInt)
 import Control.Monad.Eff.Ref (REF, Ref, modifyRef, newRef, readRef, writeRef)
-import Control.Monad.Eff.Timer (TIMER, setInterval)
+import Control.Monad.Eff.Timer (TIMER, setInterval, setTimeout)
 import Data.Foreign (unsafeFromForeign)
 import Data.Maybe (Maybe(..))
 import Data.Tuple (Tuple(..), fst, snd)
@@ -135,10 +135,16 @@ generateRandomTime targetRef = do
 
 makeGuess :: forall eff. Ref Time -> JQueryEvent -> JQuery -> Eff (canvas :: CANVAS, dom :: DOM, random :: RANDOM, ref :: REF, timer :: TIMER | eff) Unit
 makeGuess targetRef _ inputBox = do
-  guessForeign <- getValue inputBox
-  guess        <- pure $ unsafeFromForeign guessForeign
-  target       <- timeAsDigits <$> readRef targetRef
-  if target == guess
-    then nextTarget targetRef
-    else pure unit
-  
+    guessForeign <- getValue inputBox
+    guess        <- pure $ unsafeFromForeign guessForeign
+    target       <- timeAsDigits <$> readRef targetRef
+    if target == guess
+      then correct targetRef
+      else pure unit
+
+correct :: forall eff. Ref Time -> Eff (canvas :: CANVAS, dom :: DOM, random :: RANDOM, ref :: REF, timer :: TIMER | eff) Unit
+correct targetRef = do
+  correctImage <- select ".correct-image"
+  _            <- display correctImage
+  _            <- setTimeout 5000 (hide correctImage)
+  nextTarget targetRef

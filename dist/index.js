@@ -1522,6 +1522,20 @@ var PS = {};
       };
   };
 
+  exports.toggle = function(ob) {
+      return function() {
+          ob.toggle();
+      };
+  };
+
+  exports.setVisible = function(flag) {
+      return function(ob) {
+          return function() {
+              ob.toggle(flag);
+          };
+      };
+  };
+
   exports.on = function(evt) {
       return function(act) {
           return function(ob) {
@@ -1575,6 +1589,10 @@ var PS = {};
   var DOM = PS["DOM"];
   var Data_Foreign = PS["Data.Foreign"];
   var Prelude = PS["Prelude"];
+  var hide = $foreign.setVisible(false);
+  var display = $foreign.setVisible(true);
+  exports["display"] = display;
+  exports["hide"] = hide;
   exports["getValue"] = $foreign.getValue;
   exports["on"] = $foreign.on;
   exports["ready"] = $foreign.ready;
@@ -1710,8 +1728,8 @@ var PS = {};
           var v = Control_Monad_Eff_Ref.readRef(targetRef)();
           var v1 = randomTime();
           var v2 = (function () {
-              var $63 = Clock.eqTime(v)(v1);
-              if ($63) {
+              var $66 = Clock.eqTime(v)(v1);
+              if ($66) {
                   return Data_Functor["void"](Control_Monad_Eff.functorEff)(generateRandomTime(targetRef));
               };
               return Control_Monad_Eff_Ref.writeRef(targetRef)(v1);
@@ -1735,8 +1753,8 @@ var PS = {};
               return function __do() {
                   var v = Graphics_Canvas.getCanvasElementById(canvasId)();
                   var __unused = function (dictPartial1) {
-                      return function ($dollar42) {
-                          return $dollar42;
+                      return function ($dollar45) {
+                          return $dollar45;
                       };
                   };
                   return __unused()((function () {
@@ -1764,6 +1782,14 @@ var PS = {};
           return Data_Unit.unit;
       };
   };
+  var correct = function (targetRef) {
+      return function __do() {
+          var v = Control_Monad_Eff_JQuery.select(".correct-image")();
+          var v1 = Control_Monad_Eff_JQuery.display(v)();
+          var v2 = Control_Monad_Eff_Timer.setTimeout(5000)(Control_Monad_Eff_JQuery.hide(v))();
+          return nextTarget(targetRef)();
+      };
+  };
   var makeGuess = function (targetRef) {
       return function (v) {
           return function (inputBox) {
@@ -1771,9 +1797,9 @@ var PS = {};
                   var v1 = Control_Monad_Eff_JQuery.getValue(inputBox)();
                   var v2 = Data_Foreign.unsafeFromForeign(v1);
                   var v3 = Data_Functor.map(Control_Monad_Eff.functorEff)(timeAsDigits)(Control_Monad_Eff_Ref.readRef(targetRef))();
-                  var $76 = v3 === v2;
-                  if ($76) {
-                      return nextTarget(targetRef)();
+                  var $80 = v3 === v2;
+                  if ($80) {
+                      return correct(targetRef)();
                   };
                   return Data_Unit.unit;
               };
@@ -1832,6 +1858,7 @@ var PS = {};
   exports["advancePeriodInMilliseconds"] = advancePeriodInMilliseconds;
   exports["advanceTime"] = advanceTime;
   exports["animateClock"] = animateClock;
+  exports["correct"] = correct;
   exports["defaultTime"] = defaultTime;
   exports["displayTimeAsText"] = displayTimeAsText;
   exports["generateRandomTime"] = generateRandomTime;
