@@ -1,4 +1,4 @@
-# Klukkan
+# Hvað er klukkan
 
 Einfaldur og skemmtilegur leikur fyrir börn sem eru að læra á klukku.
 
