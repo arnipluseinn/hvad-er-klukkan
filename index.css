@@ -19,15 +19,15 @@ table {
 }
 
 .correct-image {
-  position: absolute;
-  top: 0%;
+  /*position: relative;*/
+  /*top: 0%;*/
 
-  width: 300px;
-  height: 212px;
+/*  width: 300px;
+  height: 212px;*/
   display: none;
-  position: relative; 
-  margin:auto;
-  padding: 20px;
+/*  position: relative; */
+/*  margin:auto;*/
+  /*padding: 20px;*/
 
 }
 
@@ -75,68 +75,6 @@ span.digits {
   text-align: center;
 }
 
-.logo-1 {
-  color: white;
-  animation: neon 3s infinite;
-}
-
-@keyframes neon {
-  0% {
-    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
-    0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
-    0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
-  }
-  50% {
-    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
-    0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
-    0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
-  }
-  100% {
-    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
-    0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
-    0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
-  }
-}
-
-
     * {
       touch-action: manipulation;
-    }
-
-    /* Non essential CSS - Just for example centering */
-
-    .center-outer {
-      display: table;
-      width: 100%;
-      height: 100%;
-    }
-
-    .center-inner {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
-    }
-
-    /* Essential CSS - Makes the effect work */
-
-    .bubbles {
-      display: inline-block;
-      font-family: arial;
-      position: relative;
-    }
-
-    .bubbles h1 {
-      position: relative;
-      margin: 1em 0 0;
-      font-family: 'Luckiest Guy', cursive;
-      color: #fff;
-      z-index: 2;
-    }
-
-    .individual-bubble {
-      position: absolute;
-      border-radius: 100%;
-      bottom: 10px;
-      background-color: #fff;
-      z-index: 1;
     }
