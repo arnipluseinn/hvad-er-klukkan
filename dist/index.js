@@ -19,7 +19,32 @@ const urls = [
   "https://giphy.com/embed/3ojkj9OPFlYoAcv2fg",
   "https://giphy.com/embed/bznNJlqAi4pBC",
   "https://giphy.com/embed/I24hjk3H0R8Oc",
-  "https://giphy.com/embed/WpCsmhOZiGM2B74f1F"
+  "https://giphy.com/embed/LZElUsjl1Bu6c",
+  "https://giphy.com/embed/nQZVy7bYWEKK4",
+  "https://giphy.com/embed/13nRKeBVhrAqmk",
+  "https://giphy.com/embed/12oyZr7VXoTn68",
+  "https://giphy.com/embed/DohrzSCB07moM",
+  "https://giphy.com/embed/3o7abldj0b3rxrZUxW",
+  "https://giphy.com/embed/kyLYXonQYYfwYDIeZl",
+  "https://giphy.com/embed/dyYOjf4hSYLuFPt4lm",
+  "https://giphy.com/embed/HBblEmWutaXQY",
+  "https://giphy.com/embed/26FL4fdR9oRs2tdEA",
+  "https://giphy.com/embed/xT0GqEFkVKZiG7uvy8",
+  "https://giphy.com/embed/26ufbhAiPrAlyvY4g",
+  "https://giphy.com/embed/3CN1xQzOlsSPWkXako",
+  "https://giphy.com/embed/26xBLaXepDmgaIdPO",
+  "https://giphy.com/embed/AfUfs2xQPOvGsQhb6E",
+  "https://giphy.com/embed/Qy7qOMWQuTw4I8JTQB",
+  "https://giphy.com/embed/z6z7UOgEyU0EOHTmwM",
+  "https://giphy.com/embed/IgLnqEAUh3XP6dagEk",
+  "https://giphy.com/embed/yoJC2COHSxjIqadyZW",
+  "https://giphy.com/embed/3oz8xRF0v9WMAUVLNK",
+  "https://giphy.com/embed/3o84U5FE8RPIMTlmKY",
+  "https://giphy.com/embed/l378gdZvixyOrlGeI",
+  "https://giphy.com/embed/3ndAvMC5LFPNMCzq7m",
+  "https://giphy.com/embed/1FwvVVVnxKWEUrsnrF",
+  "https://giphy.com/embed/26ufbhAiPrAlyvY4g",
+  "https://giphy.com/embed/l378p0VvTts3st2RG"
 ];
 
 const difficulty = [15,10,5];
@@ -1945,7 +1970,7 @@ var PS = {};
           return function (inputBox) {
               return function __do() {
   
-                  $(".correct-image").attr("src", urls[Math.floor(Math.random() * 16)])
+                  $(".correct-image").attr("src", urls[Math.floor(Math.random() * 45)])
   
                   var v1 = Control_Monad_Eff_JQuery.getValue(inputBox)();
                   
